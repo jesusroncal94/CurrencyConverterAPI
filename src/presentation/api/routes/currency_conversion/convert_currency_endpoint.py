@@ -1,3 +1,4 @@
+from typing import Annotated
 from typing import Final
 
 from business_logic import Currency
@@ -39,13 +40,13 @@ class ConvertCurrencyResponseBody(BaseModel):
     name=ENDPOINT_NAME,
 )
 async def convert_currency(
+    currency_converter_service: Annotated[
+        CurrencyConverterService, Depends(dependency=get_currency_converter_service)
+    ],
     amount: float = Query(alias=AMOUNT_QUERY_PARAM),
     from_currency: Currency = Query(alias=FROM_CURRENCY_QUERY_PARAM),
     to_currency: Currency = Query(alias=TO_CURRENCY_QUERY_PARAM),
     response: Response = Response(),
-    currency_converter_service: CurrencyConverterService = Depends(
-        dependency=get_currency_converter_service
-    ),
 ):
     try:
         result = await currency_converter_service.convert_currency(

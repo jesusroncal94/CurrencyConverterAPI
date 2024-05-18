@@ -3,3 +3,7 @@ from .entities import CurrencyConversionParams
 from .entities import CurrencyConversionResponse
 from .integration import ExchangeRatesDataAPI
 from .repositories_implemented import CurrencyConverterRepositoryImplemented
+from .entities import UserModel
+from .entities import UserCreationModel
+from .data_sources import PostgreSQLDataSource
+from .repositories_implemented import UserRepositoryImplemented

@@ -18,6 +18,7 @@ EMPTY_STRING: Final[str] = ""
 class Settings(BaseSettings):
     exchange_rates_data_api_key: str
     exchange_rates_data_api_currency_conversion_endpoint: str
+    postgre_sql_url: str
 
     model_config = SettingsConfigDict(env_file=ENV_FILE_PATH)
 

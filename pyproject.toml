@@ -13,6 +13,9 @@ fastapi = "^0.111.0"
 pydantic = "^2.7.1"
 pydantic-settings = "^2.2.1"
 httpx = "^0.27.0"
+psycopg2-binary = "^2.9.9"
+sqlmodel = "^0.0.18"
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.0"

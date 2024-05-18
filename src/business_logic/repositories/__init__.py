@@ -1,1 +1,2 @@
 from .currency_converter_repository import CurrencyConverterRepository
+from .user_repository import UserRepository
